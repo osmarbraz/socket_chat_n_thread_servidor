@@ -10,10 +10,10 @@ public class Principal {
             System.out.println("Aguardando cliente!");
             System.out.println("Servidor :" + servidor.getInetAddress().getLocalHost());
             while (true) {
-                Socket socket = servidor.accept(); // espera	  
-                Servidor cliente = new Servidor(socket);
+                Socket socket = servidor.accept(); // espera	 
+                System.out.println("Chegou um cliente!");
+                Servidor cliente = new Servidor(socket);                
                 cliente.start();
-                System.err.println("Chegou um cliente!");
             }
         } catch (IOException ioe) {
              System.out.println("Excecao: " + ioe.getMessage());
